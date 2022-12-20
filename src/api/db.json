@@ -1,0 +1,53 @@
+{
+  "experts": [
+    {
+      "name": "Juninho",
+      "email": "pedro@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "Edilson",
+      "email": "vitor@gmail.com",
+      "id": 2
+    },
+    {
+      "name": "Ana",
+      "email": "ana@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "Renata",
+      "email": "gustavo@gmail.com",
+      "id": 4
+    }
+  ],
+  "schedules": [
+    {
+      "title": "HTML",
+      "date": "2022-12-21",
+      "initTime": "15:00",
+      "endTime": "16:00",
+      "description": "Nessa aula aprenderems os conceitos de HTML.",
+      "expertsId": 1,
+      "id": 1
+    },
+    {
+      "title": "CSS",
+      "date": "2022-12-21",
+      "initTime": "15:30",
+      "endTime": "17:00",
+      "description": "Nessa aula aprenderems os conceitos de CSS.",
+      "expertsId": 1,
+      "id": 2
+    },
+    {
+      "title": "JS",
+      "date": "2022-12-21",
+      "initTime": "14:00",
+      "endTime": "16:00",
+      "description": "Nessa aula aprenderems os conceitos de JS.",
+      "expertsId": 5,
+      "id": 3
+    }
+  ]
+}

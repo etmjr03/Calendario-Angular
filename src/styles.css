@@ -1,0 +1,92 @@
+:root {
+    --purple: #8257e6;
+    --white: #FFFFFF;
+    --bg-purple-alpha: rgba(130, 87, 230, .2)
+}
+
+a {
+    text-decoration: none !important;
+}
+
+p, h1, h2, h3, h4, h5, label, small {
+    color: var(--white);
+}
+
+body {
+    background-color: rgba(18, 18, 20, 1);
+}
+
+.navbar {
+    background-color: rgba(32, 32, 36, 1) !important;
+}
+
+/* Custom Text */
+.text-purple {
+    color: var(--purple);
+}
+
+/* Custom Badges */
+.badge-purple {
+    background-color: var(--purple);
+}
+
+/* Custom Alerts */
+.alert-purple {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+/* Custom Buttons */
+.btn-purple {
+    color: var(--white);
+    background-color: var(--purple);
+    background-image: none;
+    border-color: var(--purple)
+}
+
+.btn-outline-purple {
+    color: var(--purple);
+    background-color: transparent;
+    background-image: none;
+    border-color: var(--purple)
+}
+
+.btn-outline-purple:hover {
+    color: var(--white);
+    background-color: var(--purple);
+    border-color: var(--purple)
+}
+
+/* Custom BG */
+.bg-gray {
+    background-color: rgba(32, 32, 36, 1);
+}
+
+/* Custom Reactive Forms Validation */
+.ng-touched.ng-invalid {
+    border-left-width: 5px;
+    border-color: #DC3545;
+}
+
+/* Custom Table */
+.table {
+    color: var(--white);
+}
+
+/* Custom Angular-Calendar */
+.cal-day-badge {
+    background-color: var(--purple) !important;
+}
+
+.cell-disabled {
+    background-color: rgba(211, 211, 211, .5);
+    cursor: not-allowed;
+}
+
+.cell-available {
+    cursor: pointer;
+}
+
+.cell-available:hover {
+    background-color: var(--bg-purple-alpha) !important;
+}
