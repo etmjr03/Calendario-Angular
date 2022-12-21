@@ -41,6 +41,7 @@
         [viewDate]="viewDate"
         [events]="events"
         [activeDayIsOpen]="activeDayIsOpen"
+        (eventClicked)="onEventClick($event.event)"
         (dayClicked)="onDayClick($event.day)">
     </mwl-calendar-month-view>
     
@@ -49,7 +50,8 @@
         [viewDate]="viewDate"
         [dayStartHour]="13"
         [dayEndHour]="23"
-        [events]="events">
+        [events]="events"
+        (eventClicked)="onEventClick($event.event)">
     </mwl-calendar-week-view>
 </div>
 
