@@ -1,7 +1,8 @@
+import { ScheduleService } from './../schedule.service';
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { CalendarView } from 'angular-calendar';
+import { CalendarView, CalendarEvent } from 'angular-calendar';
 import { MonthViewDay } from 'calendar-utils';
-import { isSameDay, isSameMonth } from 'date-fns';
+import { isSameDay, isSameMonth, parse, parseISO } from 'date-fns';
 import { Schedule } from '../schedule';
 
 @Component({
@@ -17,10 +18,13 @@ export class SchedulesListComponent implements OnInit {
   viewDate = new Date();
   activeDayIsOpen = false;
   view = CalendarView.Month;
+  events: CalendarEvent[] = [];
 
   modalData!: { schedule: Schedule };
 
-  constructor() { }
+  constructor(
+    private ScheduleService: ScheduleService
+  ) { }
 
   ngOnInit(): void {
     this.loadSchedules();
@@ -46,8 +50,25 @@ export class SchedulesListComponent implements OnInit {
     }
   }
 
-  private loadSchedules() {
+  private buildEvents(schedule: Schedule) {
+    const parsedDate = parseISO(schedule.date)
+    const event: CalendarEvent = {
+      title: schedule.title,
+      start: parse(schedule.initTime, 'HH:mm', parsedDate),
+      end: parse(schedule.endTime, 'HH:mm', parsedDate),
+      cssClass: 'event.-body',
+      color: {
+        primary: 'var(--purple)',
+        secondary: 'var(--bg-prple-alpha)'
+      }
+    }
+    return event;
+  }
 
+  private loadSchedules() {
+    this.ScheduleService.findAll().subscribe(response => {
+      this.events = response.map(schedule => this.buildEvents(schedule));
+    });
   }
 
 }
