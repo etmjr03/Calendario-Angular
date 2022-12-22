@@ -34,8 +34,8 @@
     {
       "title": "CSS",
       "date": "2022-12-21",
-      "initTime": "15:30",
-      "endTime": "17:00",
+      "initTime": "17:00",
+      "endTime": "18:00",
       "description": "Nessa aula aprenderems os conceitos de CSS.",
       "expertsId": 1,
       "id": 2
@@ -43,11 +43,20 @@
     {
       "title": "JS",
       "date": "2022-12-21",
-      "initTime": "14:00",
-      "endTime": "16:00",
-      "description": "Nessa aula aprenderems os conceitos de JS.",
+      "initTime": "19:00",
+      "endTime": "20:00",
+      "description": "Nessa aula aprenderemos os conceitos de JS.",
       "expertsId": 5,
       "id": 3
+    },
+    {
+      "title": "Angular",
+      "date": "2022-12-22",
+      "initTime": "13:00",
+      "endTime": "14:00",
+      "description": "Nessa aula você aprenderá conceitos de Angular.",
+      "expertsId": 1,
+      "id": 4
     }
   ]
 }

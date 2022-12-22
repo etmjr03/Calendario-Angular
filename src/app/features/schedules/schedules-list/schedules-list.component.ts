@@ -1,9 +1,9 @@
 import { Router } from '@angular/router';
 import { ScheduleService } from './../schedule.service';
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { CalendarView, CalendarEvent, CalendarEventAction } from 'angular-calendar';
+import { CalendarView, CalendarEvent, CalendarEventAction, CalendarWeekViewBeforeRenderEvent } from 'angular-calendar';
 import { MonthViewDay } from 'calendar-utils';
-import { isSameDay, isSameMonth, parse, parseISO } from 'date-fns';
+import { format, isAfter, isBefore, isSameDay, isSameMonth, parse, parseISO } from 'date-fns';
 import { Schedule } from '../schedule';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -61,6 +61,27 @@ export class SchedulesListComponent implements OnInit {
     
     this.modal.open(this.modalContent, {
       size: 'md',
+    })
+  }
+
+  onSegmentClick(date: Date) {
+    if(isAfter(date, new Date())) {
+      this.router.navigate(['schedules/new'], {
+        queryParams: {
+          date: format(date, 'yyy-MM-dd'),
+          initTime: format(date, 'HH:mm')
+        }
+      })
+    }
+  }
+
+  onBeforeRenderWeek({ hourColumns }: CalendarWeekViewBeforeRenderEvent) {
+    const todayDate = new Date();
+    const hours = hourColumns.flatMap(column => column.hours)
+    const segments = hours.flatMap(hour => hour.segments)
+    
+    segments.forEach(segment => {
+      segment.cssClass = isBefore(segment.date, todayDate) ? 'cell-disabled' : 'cell-available'
     })
   }
 
