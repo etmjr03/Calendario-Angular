@@ -19,6 +19,11 @@
       "name": "Renata",
       "email": "Renata@gmail.com",
       "id": 4
+    },
+    {
+      "name": "Maria",
+      "email": "maria@gmail.com",
+      "id": 5
     }
   ],
   "schedules": [

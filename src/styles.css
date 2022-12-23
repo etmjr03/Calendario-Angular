@@ -90,3 +90,7 @@ body {
 .cell-available:hover {
     background-color: var(--bg-purple-alpha) !important;
 }
+
+.mx-1 {
+    margin-bottom: 5px;
+}

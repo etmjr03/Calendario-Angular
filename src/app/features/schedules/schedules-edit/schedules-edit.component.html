@@ -1,50 +1,50 @@
-<h1 class="text-center mb-4">Edit event</h1>
+<h1 class="text-center mb-4">Editar evento</h1>
 
 <form [formGroup]="scheduleForm" (ngSubmit)="onSubmit()">
     <div class="row mb-3">
         <div class="col-sm-4">
-            <label>Experts</label>
+            <label class="mx-1">Ministrantes</label>
             <select class="form-control" formControlName="expertsId">
-                <option [ngValue]="null">Select</option>
+                <option [ngValue]="null">Ministrante</option>
                 <option [ngValue]="expert.id" *ngFor="let expert of experts | async">{{expert.name}}</option>
             </select>
         </div>
     </div>
 
     <div class="mb-3">
-        <label>Title</label>
-        <input type="text" class="form-control" placeholder="Title..." formControlName="title">
+        <label class="form-label">Título</label>
+        <input type="text" class="form-control" placeholder="Título..." formControlName="title">
     </div>
 
     <div class="row mb-3">
         <div class="col-sm-4">
-            <label>Date</label>
+            <label class="form-label">Data</label>
             <input type="date" class="form-control" formControlName="date">
         </div>
         <div class="col-sm-4">
-            <label>Init time</label>
+            <label class="form-label">Início</label>
             <input type="time" class="form-control" formControlName="initTime">
         </div>
         <div class="col-sm-4">
-            <label>End time</label>
+            <label class="form-label">Término</label>
             <input type="time" class="form-control" formControlName="endTime">
         </div>
     </div>
 
     <div class="mb-3">
-        <label>Description</label>
+        <label class="form-label">Descrição</label>
         <textarea class="form-control" rows="6" placeholder="Description..." formControlName="description"></textarea>
     </div>
 
     <div class="row">
         <div class="col-sm-6">
             <a routerLink="/schedules" class="btn btn-outline-purple w-100">
-                Back
+                Voltar
             </a>
         </div>
         <div class="col-sm-6">
             <button type="submit" class="btn btn-outline-success w-100" [disabled]="!scheduleForm.valid">
-                Update
+                Salvar
             </button>
         </div>
     </div>
